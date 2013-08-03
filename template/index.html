@@ -4,5 +4,7 @@
 	</head>
 	<body>
 		Hello, {{=name}}!
+		<p><input type="button" value="JsonRPC Call v2.0" onclick="$.jsonRPC.setup({endPoint: '/Json-RPC-Demo',namespace: 'demo'});$.jsonRPC.request('hello', {params: [123, 456],success: function(result){console.log(result.result);$('#rts').html(result.result);},error: function(result) {}});"/> <input type="button" value="JsonRPC Call v1.0" onclick="$.jsonRPC.setup({endPoint: '/Json-RPC-Demo'});$.jsonRPC.request('hello', {params: [123, 456],success: function(result){console.log(result.result);$('#rts').html(result.result);},error: function(result) {console.log('error');$('#rts').html(result.result);}});"/> 123+456=</p>
+		<div id="rts"></div>
 	</body>
 </html>
